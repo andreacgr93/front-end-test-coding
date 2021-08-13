@@ -2,7 +2,7 @@ import React from "react";
 
 const FooterLoro = () =>{
   return(
-    <footer className="bg-dark py-3 fixed-bottom d-flex justify-content-center">
+    <footer className="bg-dark py-3 fixed-bottom d-flex justify-content-md-center">
 
       <span>
           <a className="mx-3" href="https://github.com/andreacgr93/front-end-test-coding" target="_blank" rel="noopener noreferrer">

@@ -26,7 +26,7 @@ const Header = () =>{
 
             <ul className="navbar-nav mx-5">
                 <a className="nav-link" href="#home">Inicio</a>
-                <a className="nav-link active" href="#users">Usuarios</a>
+                <a className="nav-link active" href="/search">Usuarios</a>
                 <a className="nav-link" href="#market">Tienda</a>
             </ul>
             <span>
