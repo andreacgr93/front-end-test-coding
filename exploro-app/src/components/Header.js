@@ -7,9 +7,9 @@ const Header = () =>{
 
       <div className="container-fluid">
 
-        <h1 className="text-light mx-4">
-            ExpL<span className="text-success font-weight-bold">o</span>ro
-        </h1>
+        <Link className="navbar-brand" to={"/home"}>
+            <img src="../exploro-logo.png" alt="ExpLoro" width="180px" className="mx-3"/>
+        </Link>
 
         <button 
             className="navbar-toggler" 

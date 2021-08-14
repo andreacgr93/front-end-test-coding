@@ -1,6 +1,10 @@
 import React, {Component} from "react";
-//import {getUsersLoro} from "../services/users-loro";
 import List from "./List";
+import {toast} from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+
+toast.configure()
 
 export default class Search extends Component {
   constructor (props){
@@ -23,9 +27,23 @@ export default class Search extends Component {
   inputUserRef = React.createRef();
 
   getSearchedUser = (event) =>{
-	  event.preventDefault();
-	  const searchedUser = this.inputUserRef.current.value;
-	  this.setSearchedUser(searchedUser);
+	  	event.preventDefault();
+
+	  	const searchedUser = this.inputUserRef.current.value;
+	  	if(searchedUser.length < 4){
+		  	toast.warn("Incluir un mínimo de 4 caracteres", {
+				position: toast.POSITION.TOP_CENTER,
+				autoClose: false
+		})
+		}
+		else if(searchedUser === "noloro"){
+        	toast.warn("Intenta con otro nombre, 'noloro' no se admite", {
+				position: toast.POSITION.TOP_CENTER,
+				autoClose: false
+        })} 
+		else{
+			this.setSearchedUser(searchedUser);;
+    }
   }
 
 
@@ -53,9 +71,6 @@ export default class Search extends Component {
 						<i className="fa fa-users fa-3x mx-3 text-muted"></i>
 					</div>
 					<hr className="col-md-10 mx-auto mb-5"/>
-
-					<i className="fa fa-address-card-o fa-2x mx-3"></i>
-					<label htmlFor="user-input" className="pb-3 mb-2">Encuentra el usuario LORO que buscas</label>
 
 					<form onSubmit={this.getSearchedUser}>
 						<div className="input-group">

@@ -3,7 +3,6 @@ import {Link} from "react-router-dom"
 
 export default class List extends Component{
 
-    
     render(){
         return(
             <li className="list-group-item">

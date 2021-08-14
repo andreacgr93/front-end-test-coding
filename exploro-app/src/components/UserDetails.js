@@ -1,7 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import {useParams} from "react-router-dom";
+import {toast} from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
+toast.configure()
 
 const UserDetails = () =>{
 
@@ -25,16 +28,17 @@ const UserDetails = () =>{
           // Rendering Card User
           return ReactDOM.render(userDet, document.getElementById("selected-user"));
         })
-        .catch((err)=> console.log(err));
+        .catch((err)=> toast.error(err, {
+          position: toast.POSITION.TOP_CENTER,
+          autoClose: false
+        }));
     };
     getUsersList(login_par);
 
 
     return(
       <React.Fragment>
-
         <div id="selected-user" className="col-md-6 mx-auto mt-4"></div>
-
       </React.Fragment>
     )
   
