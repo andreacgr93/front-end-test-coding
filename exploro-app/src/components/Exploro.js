@@ -5,6 +5,7 @@ import "../../node_modules/bootstrap/dist/css/bootstrap.css";
 import "../../node_modules/font-awesome/css/font-awesome.min.css";
 import {BrowserRouter, Switch, Route } from "react-router-dom";
 import Search from "./Search";
+import UserDetails from "./UserDetails";
 
 
 export default class Exploro extends Component{
@@ -17,6 +18,7 @@ export default class Exploro extends Component{
 
                     <Switch>
                         <Route path={"/search"} component={Search}></Route>
+                        <Route path={"/user-details/:login_par"} component={UserDetails}></Route>
                     </Switch>
                     
                     <FooterLoro/>
